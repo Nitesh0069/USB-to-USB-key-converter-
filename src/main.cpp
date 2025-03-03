@@ -79,17 +79,17 @@ protected:
             case 0x26: return shift ? '(' : '9';
             case 0x27: return shift ? ')' : '0';
             
-            // Numpad keys
-            case 0x62: return '0';
-            case 0x59: return '1';
-            case 0x5A: return '2';
-            case 0x5B: return '3';
-            case 0x5C: return '4';
-            case 0x5D: return '5';
-            case 0x5E: return '6';
-            case 0x5F: return '7';
-            case 0x60: return '8';
-            case 0x61: return '9';
+            // Numpad keys (now dependent on Num Lock state)
+            case 0x62: return numLockActive ? '0' : 0;
+            case 0x59: return numLockActive ? '1' : 0;
+            case 0x5A: return numLockActive ? '2' : 0;
+            case 0x5B: return numLockActive ? '3' : 0;
+            case 0x5C: return numLockActive ? '4' : 0;
+            case 0x5D: return numLockActive ? '5' : 0;
+            case 0x5E: return numLockActive ? '6' : 0;
+            case 0x5F: return numLockActive ? '7' : 0;
+            case 0x60: return numLockActive ? '8' : 0;
+            case 0x61: return numLockActive ? '9' : 0;
 
             // Special keys
             case 0x2C: return ' '; // Spacebar
