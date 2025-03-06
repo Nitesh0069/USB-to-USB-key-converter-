@@ -78,7 +78,26 @@ protected:
             case 0x25: return shift ? '*' : '8';
             case 0x26: return shift ? '(' : '9';
             case 0x27: return shift ? ')' : '0';
-            
+
+            // Symbols and special characters
+            case 0x2D: return shift ? '_' : '-';
+            case 0x2E: return shift ? '+' : '=';
+            case 0x2F: return shift ? '{' : '[';
+            case 0x30: return shift ? '}' : ']';
+            case 0x31: return shift ? '|' : '\\';
+            case 0x33: return shift ? ':' : ';';
+            case 0x34: return shift ? '"' : '\'';
+            case 0x35: return shift ? '~' : '`';
+            case 0x36: return shift ? '<' : ',';
+            case 0x37: return shift ? '>' : '.';
+            case 0x38: return shift ? '?' : '/';
+
+            // Special keys
+            case 0x2C: return ' '; // Spacebar
+            case 0x28: return '\n'; // Enter
+            case 0x2A: return '\b'; // Backspace
+            case 0x2B: return '\t'; // Tab
+                
             // Numpad keys (now dependent on Num Lock state)
             case 0x62: return numLockActive ? '0' : 0;
             case 0x59: return numLockActive ? '1' : 0;
@@ -90,6 +109,14 @@ protected:
             case 0x5F: return numLockActive ? '7' : 0;
             case 0x60: return numLockActive ? '8' : 0;
             case 0x61: return numLockActive ? '9' : 0;
+
+              // Numpad operators (Always active)
+            case 0x54: return '/';
+            case 0x55: return '*';
+            case 0x56: return '-';
+            case 0x57: return '+';
+            case 0x58: return '\n'; // Numpad Enter
+            case 0x63: return '.';  // Numpad decimal (.)
 
             // Function keys (F1-F12)
             case 0x3A: return KEY_F1;
@@ -105,11 +132,6 @@ protected:
             case 0x44: return KEY_F11;
             case 0x45: return KEY_F12;
 
-            // Special keys
-            case 0x2C: return ' '; // Spacebar
-            case 0x28: return '\n'; // Enter
-            case 0x2A: return '\b'; // Backspace
-            case 0x2B: return '\t'; // Tab
             default: return 0;
         }
     }
