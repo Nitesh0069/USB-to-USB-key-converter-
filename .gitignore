@@ -5,3 +5,7 @@
 .vscode/ipch
 .vscode
 .desktop.ini
+.include/desktop.ini
+.lib/desktop.ini
+.src/desktop.ini
+.test/desktop.ini
