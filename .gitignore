@@ -3,11 +3,7 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
-.vscode
-.desktop.ini
-.include/desktop.ini
-.lib/desktop.ini
-.src/desktop.ini
-.test/desktop.inidesktop.ini
-desktop.ini
+*.desktop.ini
+
+
 desktop.ini
