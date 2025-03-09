@@ -143,6 +143,25 @@ protected:
             case 0x44: return KEY_F11;
             case 0x45: return KEY_F12;
 
+            // Page up, Page down, Home, End, Insert, Delete
+            case 0x4B: return KEY_PAGE_UP;// Page up
+            case 0x4E: 
+            Keyboard.press(KEY_PAGE_DOWN);// Page down
+            Keyboard.press(KEY_F13);
+            delay(10);
+            Keyboard.releaseAll();
+            return 0;
+            case 0x4A: return KEY_HOME;// Home
+            case 0x4D:
+            Keyboard.press(KEY_END);
+            Keyboard.press(KEY_F13);
+            delay(10);
+            Keyboard.releaseAll();
+            return 0;
+            // End
+            case 0x49: return KEY_INSERT;// Insert
+            case 0x4C: return KEY_DELETE;// Delete
+
             default: return 0;
         }
     }
