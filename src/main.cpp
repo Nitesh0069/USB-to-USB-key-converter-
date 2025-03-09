@@ -108,6 +108,7 @@ protected:
             case 0x28: return '\n'; // Enter
             case 0x2A: return '\b'; // Backspace
             case 0x2B: return '\t'; // Tab
+            case 0x29: return KEY_ESC; // ASCII for Escape (ESC)
                 
             // Numpad keys (now dependent on Num Lock state)
             case 0x62: return numLockActive ? '0' : 0;
@@ -120,15 +121,14 @@ protected:
             case 0x5F: return numLockActive ? '7' : 0;
             case 0x60: return numLockActive ? '8' : 0;
             case 0x61: return numLockActive ? '9' : 0;
-
-              // Numpad operators (Always active)
-            case 0x54: return '/';
-            case 0x55: return '*';
-            case 0x56: return '-';
-            case 0x57: return '+';
-            case 0x58: return '\n'; // Numpad Enter
-            case 0x63: return '.';  // Numpad decimal (.)
-
+         
+            // Numpad operators now affected by Num Lock
+            case 0x54: return numLockActive ? '/' : 0;
+            case 0x55: return numLockActive ? '*' : 0;
+            case 0x56: return numLockActive ? '-' : 0;
+            case 0x57: return numLockActive ? '+' : 0;
+            case 0x58: return numLockActive ? '\n' : 0;
+            case 0x63: return numLockActive ? '.' : 0;
             // Function keys (F1-F12)
             case 0x3A: return KEY_F1;
             case 0x3B: return KEY_F2;
