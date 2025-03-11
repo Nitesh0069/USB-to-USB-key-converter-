@@ -92,6 +92,15 @@ The macros in this project are **hardcoded into the Arduino**, meaning **any key
 
 ---
 
+## 🔢 Hex Code Reference  
+The **hex codes for each keyboard key** and how to check whether a key is usable were obtained from the following GitHub repository:  
+
+🔗 **Hexcode Reference Repository:** [Hexcode_for_keyboard](https://github.com/Nitesh0069/Hexcode_for_keyboard)  
+
+This repository contains all the **hex codes** required for proper key detection and macro execution.  
+
+---
+
 ## 🎬 Inspiration  
 📺 This project was inspired by the video: **[USB Host Keyboard on Arduino](https://youtu.be/GZEoss4XIgc?si=5EGJQVeLKa6sJi1d)**.  
 
