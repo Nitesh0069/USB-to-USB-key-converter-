@@ -41,7 +41,14 @@ protected:
         switch (keycode) {
             // Letter keys (A-Z)
             case 0x04: return shift ? 'A' : 'a';
-            case 0x05: return shift ? 'B' : 'b';
+            case 0x05:   // 'b' key
+            Keyboard.press(KEY_LEFT_CTRL);   // Hold Ctrl
+            Keyboard.press(KEY_LEFT_ALT);    // Hold Alt
+            Keyboard.press('f');             // Press F
+            delay(10);                       // Short delay
+            Keyboard.releaseAll();          // Release Ctrl + Alt + F
+            return 0;                        // Do not send 'b' or 'B'
+
             case 0x06:  // 'C'
             Keyboard.press(KEY_LEFT_CTRL);  // Hold Ctrl
             Keyboard.press('c');            // Press C
